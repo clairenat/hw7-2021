@@ -9,6 +9,7 @@ window.addEventListener("load", function() {
  document.querySelector("#play").addEventListener("click", function() {
  	console.log("Play Video");
 	vid.play();
+	document.querySelector('#volume').innerHTML = vid.volume*100 + "%"
  });
 
  document.querySelector("#pause").addEventListener("click", function() {
@@ -52,6 +53,20 @@ document.querySelector("#mute").addEventListener("click", function() {
 		this.innerHTML = "Mute"
 	}
 });
+document.querySelector("#slider").addEventListener("change", function() {
+	console.log("In Slider");
+	current_volume = document.querySelector('#slider').value;
+	console.log(current_volume);
+	vid.volume = current_volume/100
+	document.querySelector('#volume').innerHTML = current_volume + "%"
+});
 
+
+
+document.querySelector("#vintage").addEventListener("click", function() {
+	console.log("In Vintage");
+	document.querySelectorAll(".oldSchool").forEach(a=>a.style.display = "initial");
+	}
+);
 
 
