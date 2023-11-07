@@ -60,13 +60,12 @@ document.querySelector("#slider").addEventListener("change", function() {
 	vid.volume = current_volume/100
 	document.querySelector('#volume').innerHTML = current_volume + "%"
 });
-
-
-
 document.querySelector("#vintage").addEventListener("click", function() {
 	console.log("In Vintage");
-	document.querySelectorAll(".oldSchool").forEach(a=>a.style.display = "initial");
-	}
-);
-
+	document.getElementById("player1").classList.add("oldSchool");
+})
+document.querySelector("#orig").addEventListener("click", function() {
+	console.log("In Original");
+	document.getElementById("player1").classList.remove("oldSchool");
+})
 
